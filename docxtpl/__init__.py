@@ -332,9 +332,9 @@ class DocxTemplate(object):
                     continue
 
                 #title=inl.xpath('wp:docPr/@title',namespaces=docx.oxml.ns.nsmap)[0]
-                name=gd.xpath('pic:pic/pic:nvPicPr/pic:cNvPr/@name',namespaces=docx.oxml.ns.nsmap)[0]
-
-                part_map[name]=(doc_part.rels[rel].target_ref,doc_part.rels[rel].target_part)
+                #name=gd.xpath('pic:pic/pic:nvPicPr/pic:cNvPr/@name',namespaces=docx.oxml.ns.nsmap)[0]
+                name = doc_part.rels[rel].target_ref
+                part_map[name] = (doc_part.rels[rel].target_ref, doc_part.rels[rel].target_part)
 
             except:
                 continue
